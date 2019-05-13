@@ -10,8 +10,9 @@ const useFormValidation = (initialState, validate, authenticate) => {
        if(isSubmitting){
              const noErrors = Object.keys(errors).length === 0
              if (noErrors){
-                  // authenticate()
-                   setSubmitting(true)
+                  authenticate()
+                  console.log(` Were submitting`)
+                   setSubmitting(false)
              } else {
                   setSubmitting(false)
              }
@@ -26,14 +27,14 @@ const useFormValidation = (initialState, validate, authenticate) => {
 
 
  const handleBlur = () => {
-      const validationError = validate(values)
-      setErrors(validationError)
+      const validationErrors = validate(values)
+      setErrors(validationErrors)
 }
 const handleSubmit = (e) =>{
       e.preventDefault()
-      console.log("authenticated!", values.email, values.password )
-      /// Do Something
-
+      const validationErrors = validate(values)
+      setErrors(validationErrors);
+      setSubmitting(true);
     }
 
 

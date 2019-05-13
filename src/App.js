@@ -15,6 +15,11 @@ const App = (props) => {
 
   const authenticateUser = async () => {
     const { email, password } = values;
+    console.log(`email: ${email}
+      password: ${password}
+    `);
+
+    // Pass these values into firebase
     try {
       //  await firebase.register(email, password)
       // handleSubmit

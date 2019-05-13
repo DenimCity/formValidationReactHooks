@@ -16,7 +16,8 @@ const App = (props) => {
   const authenticateUser = async () => {
     const { email, password } = values;
     try {
-      // await firebase.register(email, password)
+      //  await firebase.register(email, password)
+      // handleSubmit
     } catch(err){
       console.error('Auth error', err)
       setFireBaseError(err.message)
@@ -28,7 +29,8 @@ const App = (props) => {
     handleBlur, 
     handleSubmit, 
     isSubmitting, 
-    values } = useFormValidation(INITIAL_STATE, validateAuth, authenticateUser)
+    values } = useFormValidation(INITIAL_STATE, validateAuth, authenticateUser);
+    
     const [fireBaseError, setFireBaseError] = useState(null)
 
   return (
